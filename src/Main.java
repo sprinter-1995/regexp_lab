@@ -7,21 +7,28 @@ import java.util.regex.Pattern;
 public abstract class  Main {
 
     public static void main(String[] args) throws FileNotFoundException {
-        String s = "";
+        String s = "",s1="";
         Scanner in = new Scanner(new File("C:\\Users\\Student\\IdeaProjects\\regexp_lab\\V.txt"));
         while(in.hasNext())
             s += in.nextLine() + "\r\n";
         in.close();
         System.out.println(s);
-        findName(s);
+        s1=findName(s);
+        findNumber(s1);
 
     }
-    public  static void findName(String s){
+    public  static String findName(String s){
         String name,s1;
         name = "\\b[А-ЯЁ][а-яё]+\\b";
         s1=s.replaceAll(name,"[censored]");
-        System.out.println(s1);
+        //System.out.println(s1);
+        return s1;
     }
-
+    public  static void findNumber(String s1){
+        String name,s2;
+        name = "\\d{7,12}";
+        s2=s1.replaceAll(name,"[censored]");
+        System.out.println(s2);
+    }
 
 }
