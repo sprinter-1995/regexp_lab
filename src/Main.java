@@ -13,6 +13,14 @@ public abstract class  Main {
             s += in.nextLine() + "\r\n";
         in.close();
         System.out.println(s);
+        findName(s);
+
+    }
+    public  static void findName(String s){
+        String name,s1;
+        name = "\\b[А-ЯЁ][а-яё]+\\b";
+        s1=s.replaceAll(name,"[censored]");
+        System.out.println(s1);
     }
 
 
