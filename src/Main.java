@@ -12,6 +12,7 @@ public abstract class  Main {
         while(in.hasNext())
             s += in.nextLine() + "\r\n";
         in.close();
+        System.out.println("Исходный текст:");
         System.out.println(s);
         s1=findName(s);
         findNumber(s1);
@@ -28,6 +29,7 @@ public abstract class  Main {
         String name,s2;
         name = "\\d{7,12}";
         s2=s1.replaceAll(name,"[censored]");
+        System.out.println("Итог:");
         System.out.println(s2);
     }
 
